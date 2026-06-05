@@ -189,6 +189,10 @@ app.delete('/api/admin/questions/:id', adminOnly, (req, res) => {
   res.json({ success: true });
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // ─── START ────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`Trap House running on port ${PORT}`);
